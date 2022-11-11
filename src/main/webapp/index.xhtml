@@ -14,40 +14,19 @@
         />
     </h:head>
     <h:body>
-        <!--
-            <h:form id="myForm">
-            <span class="ui-float-label">
-                <p:inputText id="float-input" value="#{pessoa.nome}" />
-                <p:outputLabel for="@previous" value="Username" />
-            </span>
-            <h:outputText id="hello-output" value="#{pessoa.nome}" />
-            <h:commandButton
-                actionListener="#{pessoa.process()}"
-                value="Processar"
-                id="commandButtonProcessar"
-            />
-        </h:form>
-        -->
         <div class="card">
             <h:form>
                 <p:breadCrumb>
-                    <p:menuitem value="Electronics" />
+                    <p:menuitem url="/" value="Electronics" />
+                    <p:menuitem url="/" value="Home" />
                 </p:breadCrumb>
                 <div class="container">
                     <div class="head-container">
                         <h1 class="title">Usuários</h1>
-                        <p:button value="Adicionar" />
+                        <p:button value="Adicionar" href="/adiconar" />
                     </div>
-                    <p:dataTable
-                        id="availableProducts"
-                        var="product"
-                        value="#{dndProductsView.products}"
-                    >
+                    <p:dataTable>
                         <p:column style="width: 20px">
-                            <h:outputText
-                                id="dragIcon"
-                                styleClass="ui-icon pi pi-plus"
-                            />
                             <p:draggable
                                 for="dragIcon"
                                 revert="true"
@@ -55,23 +34,12 @@
                             />
                         </p:column>
 
-                        <p:column headerText="Id">
-                            <h:outputText value="#{product.code}" />
-                        </p:column>
+                        <p:column headerText="Id"> </p:column>
 
-                        <p:column headerText="Nome">
-                            <h:outputText value="#{product.name}" />
-                        </p:column>
+                        <p:column headerText="Nome"> </p:column>
 
-                        <p:column headerText="Dependente">
-                            <h:outputText value="#{product.category}" />
-                        </p:column>
-
-                        <p:column headerText="Quantity">
-                            <h:outputText value="#{product.quantity}" />
-                        </p:column>
+                        <p:column headerText="Dependente"> </p:column>
                     </p:dataTable>
-
                 </div>
             </h:form>
         </div>
