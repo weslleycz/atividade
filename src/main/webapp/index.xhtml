@@ -4,10 +4,27 @@
     xmlns:f="http://xmlns.jcp.org/jsf/core"
     xmlns:p="http://primefaces.org/ui"
 >
-    <h:head> </h:head>
+    <h:head>
+        <title>Home</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="#{facesContext.externalContext.requestContextPath}/css/globals.css"
+            media="screen"
+        />
+    </h:head>
     <h:body>
-       <h:outputText id="hello-output" value="#{bean.name}" />
-       <br/>
-       <h:outputText id="hello-output" value="#{bean.description}" />
+        <h:form id="myForm">
+            <span class="ui-float-label">
+                <p:inputText id="float-input" value="#{pessoa.nome}" />
+                <p:outputLabel for="@previous" value="Username" />
+            </span>
+            <h:outputText id="hello-output" value="#{pessoa.nome}" />
+            <h:commandButton
+                actionListener="#{pessoa.process()}"
+                value="Processar"
+                id="commandButtonProcessar"
+            />
+        </h:form>
     </h:body>
 </html>
