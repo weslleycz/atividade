@@ -1,0 +1,50 @@
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+>
+    <h:head>
+        <title>Home</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="#{facesContext.externalContext.requestContextPath}/css/globals.css"
+            media="screen"
+        />
+    </h:head>
+    <h:body>
+        <p:breadCrumb>
+            <p:menuitem url="/" value="Electronics" />
+            <p:menuitem url="/" value="Home" />
+            <p:menuitem value="Adicionar" />
+        </p:breadCrumb>
+        <h:form
+        >
+            <div class="field">
+                <div class="add-container">
+                    <label for="float-input">Nome:</label>
+                    <p:inputText
+                        value="#{pessoa.nome}"
+                        id="name"
+                        styleClass="block"
+                    />
+                    <br />
+                    <label for="float-input">CPF:</label>
+                    <p:inputText
+                        id="cpf"
+                        value="#{pessoa.cpf}"
+                        styleClass="block"
+                    />
+                    <br />
+                    <h:commandButton
+                        actionListener="#{pessoa.process()}"
+                        class="bn"
+                        value="Salvar"
+                        id="commandButtonProcessar"
+                    />
+                </div>
+            </div>
+        </h:form>
+    </h:body>
+</html>

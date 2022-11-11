@@ -12,5 +12,8 @@ public class WelcomePageRedirect implements WebMvcConfigurer {
         registry.addViewController("/")
                 .setViewName("forward:/index.xhtml");
         registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
+        registry.addViewController("/adiconar")
+                .setViewName("forward:/add.xhtml");
+        registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
     }
 }

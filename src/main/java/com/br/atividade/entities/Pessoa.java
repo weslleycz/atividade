@@ -6,6 +6,7 @@ import javax.faces.bean.RequestScoped;
 import lombok.Getter;
 import lombok.Setter;
 
+
 @Getter
 @Setter
 @RequestScoped
@@ -13,9 +14,11 @@ import lombok.Setter;
 public class Pessoa {
     private int id;
     private String nome;
+    private String cpf;
     private Dependente dependente;
 
-    public void process(){
+    public void process() {
         System.out.println(nome);
-   }
+        System.out.println(cpf);
+    }
 }
