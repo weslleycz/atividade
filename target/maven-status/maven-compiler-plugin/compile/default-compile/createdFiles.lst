@@ -1,1 +1,4 @@
+com/br/atividade/entities/Pessoa.class
 com/br/atividade/Main.class
+com/br/atividade/navigation/WelcomePageRedirect.class
+com/br/atividade/entities/Dependente.class
