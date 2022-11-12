@@ -1,2 +1,5 @@
+com/br/atividade/controller/AddBean.class
 com/br/atividade/Main.class
 com/br/atividade/navigation/WelcomePageRedirect.class
+com/br/atividade/model/Pessoa.class
+com/br/atividade/model/Dependente.class
