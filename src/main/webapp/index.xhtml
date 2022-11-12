@@ -9,7 +9,7 @@
         <link
             rel="stylesheet"
             type="text/css"
-            href="#{facesContext.externalContext.requestContextPath}/css/globals.css"
+            href="#{facesContext.externalContext.requestContextPath}/css/globals.scss"
             media="screen"
         />
     </h:head>
@@ -22,8 +22,10 @@
                 </p:breadCrumb>
                 <div class="container">
                     <div class="head-container">
-                        <h1 class="title">Usuários</h1>
-                        <p:button value="Adicionar" href="/adiconar" />
+                        <h1>Usuários</h1>
+                        <div class="btn-home">
+                            <p:button value="Adicionar" href="/adiconar" />
+                        </div>
                     </div>
                     <p:dataTable>
                         <p:column style="width: 20px">

@@ -1,10 +1,15 @@
 package com.br.atividade.model;
 
-import javax.persistence.Column;
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,15 +17,18 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Pessoa {
+@Table(name = "Pessoa")
+public class Pessoa implements Serializable {
+
+    private static final CascadeType[] ALL = null;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "NAME", length = 50, nullable = false)
     private String nome;
 
-    // private List<Dependente> dependente;
+    @ElementCollection
+    private List<Dependente> dependente;
+
 }

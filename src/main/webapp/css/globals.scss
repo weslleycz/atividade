@@ -21,6 +21,7 @@ body {
     ::-webkit-scrollbar-thumb {
         border-radius: 10%;
     }
+
 }
 
 img {
@@ -40,7 +41,7 @@ img {
 
 body {
     -webkit-font-smoothing: antialiased;
-    background-color: #fafbfe;
+    background-color: #fafafa;
 }
 
 body,
@@ -92,13 +93,6 @@ a {
     padding: 2%;
 }
 
-.title {
-    display: inline-block;
-    color: #0e182b;
-    font-weight: 600;
-    margin-right: 75%;
-}
-
 .ui-float-label {
     padding: 2%;
 }
@@ -108,7 +102,6 @@ button.ui-button {
 }
 
 .btn {
-    width: 100%;
     appearance: button;
     background-color: #1652f0;
     border: 1px solid #1652f0;
@@ -126,8 +119,7 @@ button.ui-button {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    width: fit-content;
-
+    //width: fit-content;
     &:disabled {
         opacity: 0.5;
     }
@@ -145,4 +137,11 @@ button.ui-button {
         background-color: #0039d7;
         border-color: #0039d7;
     }
+}
+
+.btn-home{
+    margin-left: 90%;
+    display: inline-block;
+    color: #0e182b;
+    font-weight: 600;
 }
