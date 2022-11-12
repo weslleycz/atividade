@@ -1,5 +1,7 @@
+/home/weslley/Área de trabalho/atividade/src/main/java/com/br/atividade/controller/HomeBean.java
 /home/weslley/Área de trabalho/atividade/src/main/java/com/br/atividade/controller/AddBean.java
 /home/weslley/Área de trabalho/atividade/src/main/java/com/br/atividade/navigation/WelcomePageRedirect.java
 /home/weslley/Área de trabalho/atividade/src/main/java/com/br/atividade/model/Dependente.java
 /home/weslley/Área de trabalho/atividade/src/main/java/com/br/atividade/Main.java
+/home/weslley/Área de trabalho/atividade/src/main/java/com/br/atividade/repository/IPessoaRepository.java
 /home/weslley/Área de trabalho/atividade/src/main/java/com/br/atividade/model/Pessoa.java
