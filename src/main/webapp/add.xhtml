@@ -17,34 +17,39 @@
         <p:breadCrumb>
             <p:menuitem url="/" value="Electronics" />
             <p:menuitem url="/" value="Home" />
-            <p:menuitem value="Adicionar" />
+            <p:menuitem value="Adicionar" url="/adiconar" />
         </p:breadCrumb>
-        <h:form
-        >
+        <h:form>
             <div class="field">
                 <div class="add-container">
                     <label for="float-input">Nome:</label>
                     <p:inputText
-                        value="#{pessoa.nome}"
+                        value="#{addBean.nome}"
                         id="name"
+                        required="true"
                         styleClass="block"
                     />
                     <br />
                     <label for="float-input">CPF:</label>
                     <p:inputText
                         id="cpf"
-                        value="#{pessoa.cpf}"
+                        required="true"
+                        value="#{addBean.cpf}"
                         styleClass="block"
                     />
                     <br />
                     <h:commandButton
-                        actionListener="#{pessoa.process()}"
-                        class="bn"
+                        actionListener="#{addBean.process()}"
+                        class="btn"
                         value="Salvar"
                         id="commandButtonProcessar"
                     />
+                    <p:messages id="messages" showDetail="true" closable="true">
+                        <p:autoUpdate/>
+                    </p:messages>
                 </div>
             </div>
         </h:form>
     </h:body>
+    <script src="#{facesContext.externalContext.requestContextPath}/js/main.js"></script>
 </html>

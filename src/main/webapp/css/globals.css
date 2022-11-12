@@ -104,7 +104,7 @@ button.ui-button {
   margin-right: 0.5rem;
 }
 
-.bn {
+.btn {
   width: 100%;
   -webkit-appearance: button;
      -moz-appearance: button;
@@ -131,17 +131,17 @@ button.ui-button {
   width: -moz-fit-content;
   width: fit-content;
 }
-.bn:disabled {
+.btn:disabled {
   opacity: 0.5;
 }
-.bn:focus {
+.btn:focus {
   outline: 0;
 }
-.bn:hover {
+.btn:hover {
   background-color: #0a46e4;
   border-color: #0a46e4;
 }
-.bn:active {
+.btn:active {
   background-color: #0039d7;
   border-color: #0039d7;
 }/*# sourceMappingURL=globals.css.map */
