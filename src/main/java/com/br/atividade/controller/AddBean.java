@@ -1,6 +1,8 @@
 package com.br.atividade.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.ManagedBean;
 import javax.faces.application.FacesMessage;
@@ -24,13 +26,12 @@ import lombok.Setter;
 public class AddBean {
     private String nome;
     private String cpf;
+    private List<Pessoa> lista = new ArrayList<Pessoa>();
 
     @Autowired
     private IPessoaRepository repository;
 
     public void process() throws IOException {
-        System.out.println(nome);
-        System.out.println(cpf);
         try {
             Pessoa pessoa = new Pessoa();
             pessoa.setNome(nome);
@@ -45,5 +46,3 @@ public class AddBean {
         }
     }
 }
-
-//HomeBean

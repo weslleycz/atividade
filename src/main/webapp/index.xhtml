@@ -27,28 +27,33 @@
                             <p:button value="Adicionar" href="/adiconar" />
                         </div>
                     </div>
-                    <p:dataTable>
-                        <p:column style="width: 20px">
-                            <p:draggable
-                                for="dragIcon"
-                                revert="true"
-                                helper="clone"
-                            />
-                        </p:column>
-
-                        <p:column headerText="Id"> </p:column>
-
-                        <p:column headerText="Nome"> </p:column>
-                        <p:column headerText="Dependente"> </p:column>
-                    </p:dataTable>
+                    <h:dataTable
+                        value="#{homeBean.lista}"
+                        var="com"
+                        rules="rows"
+                    >
+                        <h:column>
+                            <f:facet name="header">ID</f:facet
+                            >#{com.id}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">Nome</f:facet
+                            >#{com.nome}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">CPF</f:facet
+                            >#{com.cpf}
+                        </h:column>
+                    </h:dataTable>
                 </div>
-                <h:outputText value="#{homeBean.nome}" />
                 <h:commandButton
+                actionListener="#{homeBean.getPessoas()}"
+                class="btn-getUser"
                 value="Salvar"
                 id="commandButtonProcessar"
-                actionListener="#{homeBean.process()}"
-                />
+            />
             </h:form>
         </div>
+        <script src="#{facesContext.externalContext.requestContextPath}/js/main.js"></script>
     </h:body>
 </html>

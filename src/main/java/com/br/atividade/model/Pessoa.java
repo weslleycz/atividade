@@ -21,14 +21,13 @@ import lombok.Setter;
 public class Pessoa implements Serializable {
 
     private static final CascadeType[] ALL = null;
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nome;
     private String cpf;
 
-    
     @ElementCollection
     private List<Dependente> dependente;
 
