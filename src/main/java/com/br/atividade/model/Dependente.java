@@ -15,7 +15,7 @@ import lombok.Setter;
 public class Dependente implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idDependente;
+    private Long id;
 
     private String nome;
 
