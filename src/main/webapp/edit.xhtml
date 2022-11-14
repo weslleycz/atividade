@@ -36,12 +36,21 @@
                             <h5
                                 class="mb-1 text-xl font-medium text-gray-900 dark:text-white"
                             >
-                                <h:outputText value="#{selectAddBean.nome}" />
+                                <h:inputText
+                                    class="text-center"
+                                    value="#{selectAddBean.nome}"
+                                    id="name"
+                                />
                             </h5>
                             <span
                                 class="text-sm text-gray-500 dark:text-gray-400"
-                                ><h:outputText value="#{selectAddBean.cpf}"
-                            /></span>
+                            >
+                                <h:inputText
+                                    class="text-center"
+                                    value="#{selectAddBean.cpf}"
+                                    id="cpf"
+                                />
+                            </span>
                             <div class="flex justify-center">
                                 <ul
                                     class="bg-white rounded-lg border border-gray-200 w-96 text-gray-900"
@@ -64,7 +73,6 @@
                                             >
                                                 <h:commandButton
                                                     class="btn-link"
-                                                    actionListener="#{selectAddBean.selectPessoa(com.id)}"
                                                     value="#{com.id}"
                                                 >
                                                 </h:commandButton>
@@ -74,9 +82,17 @@
                                 </ul>
                             </div>
                         </div>
+                        <h:commandButton
+                        class="btn-getUser"
+                        actionListener="#{selectAddBean.putPessoas(selectAddBean.id)}"
+                        value="Salvar"
+                        id="commandButtonProcessar"
+                    >
+                    </h:commandButton>
                     </div>
                 </div>
             </h:form>
         </div>
     </h:body>
+    <script src="#{facesContext.externalContext.requestContextPath}/js/edit.js"></script>
 </html>

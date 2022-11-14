@@ -35,6 +35,7 @@ public class SelectAddBean {
 
     private String nome;
     private String cpf;
+    private Long id;
 
     private List<Dependente> dependentes = new ArrayList<Dependente>();
 
@@ -43,9 +44,23 @@ public class SelectAddBean {
         if (pessoa.isPresent()) {
             this.nome = pessoa.get().getNome();
             this.cpf = pessoa.get().getCpf();
+            this.id = pessoa.get().getId();
             //this.dependentes = pessoa.get().getDependente();
             FacesContext.getCurrentInstance().getExternalContext().redirect("/edit");
         }
+    }
+
+    public void putPessoas(Long id) {
+        System.out.println(id);
+        System.out.println(nome);
+        System.out.println(cpf);
+        Optional<Pessoa> pessoa = repository.findById(id);
+        Pessoa upidate = pessoa.get();
+        upidate.setCpf(cpf);
+        upidate.setNome(nome);
+
+       repository.save(upidate);
+
     }
 
 }
