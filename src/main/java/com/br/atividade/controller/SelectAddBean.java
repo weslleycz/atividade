@@ -51,9 +51,6 @@ public class SelectAddBean {
     }
 
     public void putPessoas(Long id) {
-        System.out.println(id);
-        System.out.println(nome);
-        System.out.println(cpf);
         Optional<Pessoa> pessoa = repository.findById(id);
         Pessoa upidate = pessoa.get();
         upidate.setCpf(cpf);

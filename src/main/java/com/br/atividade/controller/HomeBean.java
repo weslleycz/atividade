@@ -24,13 +24,34 @@ import lombok.Setter;
 @ManagedBean
 @Component
 public class HomeBean {
-    private List<Pessoa> lista = new ArrayList<Pessoa>();
+    private static final Class<? extends Optional> Optional = null;
+    private ArrayList<Pessoa> lista = new ArrayList<Pessoa>();
     @Autowired
     private IPessoaRepository repository;
 
+    private String cpf;
+
     public void getPessoas() throws IOException {
+        this.cpf = "";
         List<Pessoa> pessoas = (List<Pessoa>) repository.findAll();
-        this.lista = pessoas;
+        this.lista = (ArrayList<Pessoa>) pessoas;
         FacesContext.getCurrentInstance().getExternalContext().redirect("/?");
+    }
+
+    public void getPessoasCPF() throws IOException {
+        System.out.println(cpf);
+        if (cpf != "") {
+            ArrayList<Pessoa> pessoas = repository.findByCpf(cpf);
+            if (pessoas.size() != 0) {
+                this.lista = pessoas;
+                FacesContext.getCurrentInstance().getExternalContext().redirect("/??");
+            } else {
+                ArrayList<Pessoa> listaVoid = new ArrayList<Pessoa>();
+                this.lista = listaVoid;
+                FacesContext.getCurrentInstance().getExternalContext().redirect("/??");
+            }
+        } else {
+            getPessoas();
+        }
     }
 }
