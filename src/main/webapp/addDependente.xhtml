@@ -1,0 +1,72 @@
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+>
+    <h:head>
+        <title>Home</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="#{facesContext.externalContext.requestContextPath}/css/globals.scss"
+            media="screen"
+        />
+    </h:head>
+    <h:body>
+        <style>
+            .value {
+                font-weight: bold;
+            }
+        </style>
+        <p:breadCrumb>
+            <p:menuitem url="/" value="Electronics" />
+            <p:menuitem url="/" value="Home" />
+            <p:menuitem value="Adicionar" url="/adiconar" />
+            <p:menuitem value="Dependente" url="/criar" />
+        </p:breadCrumb>
+        <h:form id="form">
+            <div class="field">
+                <div class="add-container">
+                    <label for="float-input">Nome:</label>
+                    <p:inputText
+                        value="#{selectAddBean.nomeDependente}"
+                        id="nome"
+                        required="true"
+                        styleClass="block"
+                    />
+                    <br />
+                    <p:growl
+                        id="msgs"
+                        showDetail="true"
+                        skipDetailIfEqualsSummary="true"
+                    />
+                    <div class="ui-fluid grid formgrid">
+                        <div class="field col-12 md:col-4">
+                            <p:outputLabel
+                                for="basic"
+                                value="Data de Nascimento:"
+                            />
+                            <p:datePicker
+                                id="basic"
+                                value="#{selectAddBean.dataDeNascimento}"
+                            />
+                        </div>
+                    </div>
+                    <br />
+                    <h:commandButton
+                    actionListener="#{selectAddBean.selectDependente()}"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    value="Salvar"
+                    id="commandButtonProcessar"
+                />
+                    <p:messages id="messages" showDetail="true" closable="true">
+                        <p:autoUpdate />
+                    </p:messages>
+                </div>
+            </div>
+        </h:form>
+    </h:body>
+    <script src="#{facesContext.externalContext.requestContextPath}/js/datePicker.js"></script>
+</html>
