@@ -15,8 +15,8 @@
         />
     </h:head>
     <h:body>
+
         <div class="card">
-            <h:form class="table-fixed">
                 <p:breadCrumb>
                     <p:menuitem url="/" value="Electronics" />
                     <p:menuitem url="/" value="Home" />
@@ -39,6 +39,7 @@
                         </div>
                     </div>
                     <div class="rounded bg-white overflow-hidden shadow-lg">
+                        <h:form class="table-fixed">
                         <div class="flex flex-col">
                             <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                                 <div
@@ -97,8 +98,30 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                        
+                    </h:form>
+
+                    <h:form class="table-fixed">
+                        <div class="flex items-center  justify-center pt-6 pb-6">
+                            <div class="flex border-2 rounded">
+                                <h:inputText
+                                    label="CPF"
+                                    class="w-80 "
+                                    onchange="getCPF()"
+                                    placeholder="CPF"
+                                    value="#{homeBean.cpf}"
+                                    id="cpf"
+                                />
+                                <h:commandButton
+                                    actionListener="#{homeBean.getPessoasCPF()}"
+                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                    value="Buscar"
+                                >
+                                </h:commandButton>
+                            </div>
+                        </div>
+                    </h:form>
+
                 <h:commandButton
                     actionListener="#{homeBean.getPessoas()}"
                     class="btn-getUser"
@@ -107,22 +130,12 @@
                 >
                     <f:ajax execute="@this" render="@form" />
                 </h:commandButton>
-            </h:form >
-            <h:form class="table-fixed">
-                <h:inputText 
-                label="CPF"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                onchange="getCPF()"
-                placeholder="CPF"
-                 value="#{homeBean.cpf}" id="cpf" />
-                <h:commandButton
-                    actionListener="#{homeBean.getPessoasCPF()}"
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                    value="Buscar"
-                >
-                </h:commandButton>
-            </h:form>
+            </div>
+        </div>
     </div>
+
+
+
 
         <script
             src="#{facesContext.externalContext.requestContextPath}/js/main.js"

@@ -45,7 +45,7 @@ public class SelectAddBean {
             this.nome = pessoa.get().getNome();
             this.cpf = pessoa.get().getCpf();
             this.id = pessoa.get().getId();
-            //this.dependentes = pessoa.get().getDependente();
+            
             FacesContext.getCurrentInstance().getExternalContext().redirect("/edit");
         }
     }
@@ -56,7 +56,7 @@ public class SelectAddBean {
         upidate.setCpf(cpf);
         upidate.setNome(nome);
 
-       repository.save(upidate);
+        repository.save(upidate);
 
     }
 
